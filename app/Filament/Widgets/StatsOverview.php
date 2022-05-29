@@ -10,6 +10,10 @@ use Illuminate\Support\Arr;
 
 class StatsOverview extends BaseWidget
 {
+    public static function canView(): bool
+    {
+        return true;
+    }
     protected function getCards(): array
     {
         $stocks = StockName::with('latest')->get()->sortByDesc('latest.current_price');
