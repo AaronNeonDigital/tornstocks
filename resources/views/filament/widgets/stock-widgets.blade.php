@@ -1,7 +1,7 @@
 <div class="grid col-span-12">
-    <div class="grid grid-cols-4 gap-4">
+    <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         @foreach ($this->stockData as $stock)
-            <div class="col-span-1">
+            <div>
                 {{ 
                 
                     \Filament\Widgets\StatsOverviewWidget\Card::make($stock['name'].' ('.$stock['acronym'].')', '$'.number_format($stock['latest']['current_price'], 2))
